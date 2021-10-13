@@ -15,12 +15,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: orange;
+    background: rgb(255, 0, 128);
     transition-duration: 0.2s;
-    box-shadow: 0px 0px 40px orange;
+    box-shadow: 0px 0px 40px rgb(255, 0, 128);
 }
 
-h1 {
+h1, h2, h3 {
     font-family: 'Share Tech Mono', monospace;
     color: white;
 }
@@ -38,7 +38,7 @@ body {
 }
 
 .title {
-    color: orange;
+    color: rgb(255, 0, 128);
     font-size: 80px;
     font-family: 'Share Tech Mono', monospace;
     word-wrap: break-word;
@@ -59,16 +59,16 @@ body {
 
 .nav-link:hover {
     transition-duration: 0.2s;
-    color: orange;
+    color: rgb(255, 0, 128);
 }
 
 .text-page-file {
-    color: orange;
+    color: rgb(255, 0, 128);
     font-family: 'Share Tech Mono', monospace;
 }
 
 .text-page-h1 {
-    color: orange;
+    color: rgb(255, 0, 128);
     font-family: 'Share Tech Mono', monospace;
 }
 
@@ -76,11 +76,17 @@ body {
     color: white;
     font-family: 'Share Tech Mono', monospace;
     text-align: justify;
-    /* background-image: linear-gradient(to top, black, rgb(30, 30, 30));
-    border-color: rgb(30, 30, 30);
-    border-radius: 20px; */
-    /* padding: 20px 20px 20px 20px; */
 }
+
+.text-page-p:first-letter {
+    color: rgb(255, 0, 128);
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 4px;
+    padding-left: 3px;
+  }
 
 .img-page {
     background-color: rgb(30, 30, 30);
@@ -89,7 +95,7 @@ body {
 .img-page-img {
     /* margin: 10px 50px; */
     max-width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .img-page-vid {
@@ -98,6 +104,44 @@ body {
     height: 100%;
 }
 
-.carousel-button {
-    margin-left: 50px;
+.link {
+    display: inline-block;
+    color: white;
+    transition-duration: 0.2s;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: rgb(255, 0, 128);
+    transition-duration: 0.2s;
+}
+
+.window-container {
+    padding: 10px;
+    /* background-color: black; */
+    border-color: white;
+    border-style: solid;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-width: 1px;
+}
+
+.window-bar {
+    padding: 8px;
+    background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.window-dot {
+    height: 12px;
+    width: 12px;
+    background-color: rgb(255, 0, 128);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.window-text{
+    font-family: 'Share Tech Mono', monospace;
+    color: rgb(255, 0, 128);
 }
