@@ -109,8 +109,9 @@ body {
 
 .img-page-img {
     /* margin: 10px 50px; */
-    max-width: 100%;
-    border-radius: 10px;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .img-page-vid {
@@ -159,4 +160,14 @@ body {
 .window-text{
     font-family: 'Share Tech Mono', monospace;
     color: rgb(255, 0, 128);
+}
+
+.nav-tabs .nav-link:not(.active) {
+    background-color: rgb(255, 0, 128);
+    color: white;
+}
+
+.nav-tabs .nav-link:is(.active) {
+    background-color: rgba(255, 0, 128, 0.2);
+    color: white;
 }
