@@ -24,6 +24,12 @@
 </head>
 <body style="background-color: rgb(30, 30, 30);" data-spy="scroll" data-target=".navbar" data-offset="50">
     
+    <!-- Loading Screen -->
+    <div id="loadingScreen" style="break-after: always;" class="h-100 d-flex justify-content-center align-items-center fixed-top">
+        <img class="loader" src="img/load.png">
+    </div>
+
+<div id="mainContent" class="loading">
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand fixed-top">
         <a class="navbar-brand" href="#">
@@ -230,7 +236,7 @@
         <br>
         <br>
     </div>
-
+</div>
 </body>
 <script>
 
@@ -256,7 +262,12 @@
         removeElement(remove);
     }
 
-    setInterval(typeIntro, 50);
+    window.addEventListener('load', function () {
+        removeElement("loadingScreen");
+        document.getElementById("mainContent").classList.remove('loading');
+        document.getElementById("mainContent").classList.add('loaded');
+        setInterval(typeIntro, 50);
+    })
 
 </script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

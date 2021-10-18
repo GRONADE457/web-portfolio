@@ -41,6 +41,27 @@ body {
     position: relative;
 }
 
+@keyframes load-zoom{
+    from{width: 35%; opacity: 0;}
+    to{width: 40%; opacity: 1;}
+}
+
+.loader{
+    width: 40%;
+    animation-name: load-zoom;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-out;
+}
+
+.loading {
+    opacity: 0;
+}
+
+.loaded {
+    transition-duration: 0.8s;
+    opacity: 1;
+}
+
 .title-page {
     background-color: rgb(30, 30, 30);
 }
