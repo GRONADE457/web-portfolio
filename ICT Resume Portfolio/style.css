@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Zilla+Slab+Highlight&display=swap');
+
+/* THIS IS THE ORIGINAL FONT: |||font-family: 'Share Tech Mono', monospace;||| */
+
 html {
     overflow-y: scroll;
 }
@@ -20,8 +24,15 @@ html {
     box-shadow: 0px 0px 40px rgb(255, 0, 128);
 }
 
+::selection {
+    background: rgb(255, 0, 128); /* WebKit/Blink Browsers */
+  }
+::-moz-selection {
+    background: rgb(255, 0, 128); /* Gecko Browsers */
+}
+
 h1, h2, h3 {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Libre Barcode 39 Text', cursive;
     color: white;
 }
 
@@ -37,7 +48,7 @@ body {
 .title {
     color: rgb(255, 0, 128);
     font-size: 80px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Zilla Slab Highlight', cursive;
     word-wrap: break-word;
     word-break: break-all;
 }
@@ -45,7 +56,7 @@ body {
 .title-p {
     color: white;
     font-size: 16px;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: monospace;
 }
 
 .navbar {
@@ -54,43 +65,48 @@ body {
 
 .nav-link {
     transition-duration: 0.2s;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: monospace;
     color: white;
 }
 
 .nav-link:hover {
     transition-duration: 0.2s;
     color: rgb(255, 0, 128);
+    cursor: pointer;
 }
 
 .text-page-file {
     color: rgb(255, 0, 128);
-    font-family: 'Share Tech Mono', monospace;
+    font-family: monospace;
 }
 
 .text-page-h1 {
     color: rgb(255, 0, 128);
-    font-family: 'Share Tech Mono', monospace;
+    font-family: monospace;
 }
 
 .text-page-p {
     color: white;
-    font-family: 'Share Tech Mono', monospace;
-    text-align: justify;
+    font-family: monospace;
+    /* text-align: justify; */
 }
 
 .text-page-tag {
-    color:rgb(255, 0, 128);
-    border-radius: 10px;
+    color: white;
     display: inline-block;
-    border-color: white;
-    border-style: solid;
-    font-family: 'Share Tech Mono', monospace;
+    /* border-radius: 10px; */
+    /* border-color: white;
+    border-style: solid; */
+    font-family: 'Libre Barcode 39 Text', cursive;
     border-width: 2px;
     padding: 1px 4px 1px 4px;
     margin-right: 4px;
-    font-size: 20px;
+    margin-bottom: 0px;
+    font-size: 40px;
+}
 
+.text-page-tag:first-letter {
+    color: rgb(255, 0, 128);
 }
 
 .text-page-p:first-letter {
@@ -158,16 +174,62 @@ body {
 }
 
 .window-text{
-    font-family: 'Share Tech Mono', monospace;
+    font-family: monospace;
     color: rgb(255, 0, 128);
 }
 
-.nav-tabs .nav-link:not(.active) {
+.tab-link {
     background-color: rgb(255, 0, 128);
-    color: white;
+    padding: 4px 16px;
+    color: black;
+    font-family: monospace;
+    font-weight: bold;
 }
 
-.nav-tabs .nav-link:is(.active) {
-    background-color: rgba(255, 0, 128, 0.2);
+.tab-link:not(.active) {
+    background-color: white;
+}
+
+.tab-link:hover {
+    text-decoration: none;
     color: white;
+    background-color: black;
+}
+
+.censored {
+    filter: brightness(0) invert(0);
+}
+
+.uncensored {
+    transition-duration: 1s;
+    filter: brightness(1) invert(0);
+}
+
+.censored-container {
+    position: relative;
+    text-align: center;
+}
+
+.censored-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: monospace;
+}
+
+.censored-button {
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    padding: 3px 5px 3px 5px;
+    color: rgb(255, 0, 128);
+    transition-duration: 0.5s;
+}
+
+.censored-button:hover {
+    cursor: pointer;
+    border-color: rgb(255, 0, 128);
+    border-radius: 10px;
+    transition-duration: 0.5s;
 }

@@ -84,32 +84,41 @@
                                 Nulla facilisi. Ut porta, lectus nec aliquet varius, sem nunc tempor lacus, vitae condimentum dolor magna in velit.</p>
                         </div>
                         <div class="col-lg-6">
-                            <h3><a class="link" href="index.html" target="_blank"><i class="fab fa-github" style="padding-right: 10px;"></i>Download</a></h3>
-
+                            <br>
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#home"></a>
+                                    <a class="tab-link active" data-toggle="tab" href="#lp1">1</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#menu1"></a>
+                                    <a class="tab-link" data-toggle="tab" href="#lp2">2</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#menu2"></a>
+                                    <a class="tab-link" data-toggle="tab" href="#lp3">3</a>
                                 </li>
                             </ul>
 
                             <div class="tab-content">
-                                <div id="home" class="container tab-pane active" style="padding: 0px;">
+                                <div id="lp1" class="container tab-pane active" style="padding: 0px;">
                                     <img class="img-page-img" src="img/last-place.png">
                                 </div>
-                                <div id="menu1" class="container tab-pane fade" style="padding: 0px;">
-                                    <img class="img-page-img" src="img/last-place.png">
+                                <div id="lp2" class="container tab-pane fade" style="padding: 0px;">
+                                    <div class="censored-container">
+                                        <img id="gore" class="img-page-img censored" src="img/last-place.png">
+                                        <h3 id="goreWarning" class="censored-text">
+                                            This image contains <span style="color: rgb(255, 0, 128); font-weight: bold;">Cartoon Blood</span>
+                                            <br><br>
+                                            <span class="censored-button" onclick="revealImage('gore', 'goreWarning');">Reveal</span>
+                                        </h3>
+                                    </div>
                                 </div>
-                                <div id="menu2" class="container tab-pane fade" style="padding: 0px;">
+                                <div id="lp3" class="container tab-pane fade" style="padding: 0px;">
                                     <img class="img-page-img" src="img/last-place.png">
                                 </div>
                             </div>
 
+                            <div style="padding-top: 10px;" class="w-100 d-flex">
+                                <h3 class="ml-auto"><a class="link" href="index.html" target="_blank"><i class="fab fa-github" style="padding-right: 10px;"></i><span style="font-size: 40px;">Github</span></a></h3>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,6 +244,16 @@
             document.getElementById("intro").innerHTML = currentText;
             textIndex += 1;
         }
+    }
+
+    function removeElement(element) {
+        document.getElementById(element).remove();
+    }
+
+    function revealImage(element, remove){
+        document.getElementById(element).classList.remove('censored');
+        document.getElementById(element).classList.add('uncensored');
+        removeElement(remove);
     }
 
     setInterval(typeIntro, 50);
