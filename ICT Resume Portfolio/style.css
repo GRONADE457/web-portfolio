@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Zilla+Slab+Highlight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@300&display=swap');
 
 /* THIS IS THE ORIGINAL FONT: |||font-family: 'Share Tech Mono', monospace;||| */
 
@@ -32,18 +33,14 @@ html {
 }
 
 h1, h2, h3 {
-    font-family: 'Libre Barcode 39 Text', cursive;
+    font-family: 'Tourney', cursive;
     color: white;
 }
 
 body {
     background-color: rgb(30, 30, 30);
     position: relative;
-}
-
-@keyframes load-zoom{
-    from{width: 35%; opacity: 0;}
-    to{width: 40%; opacity: 1;}
+    overflow: hidden;
 }
 
 .loader{
@@ -51,6 +48,26 @@ body {
     animation-name: load-zoom;
     animation-duration: 0.3s;
     animation-timing-function: ease-out;
+}
+
+@keyframes load-zoom{
+    from{width: 35%; opacity: 0;}
+    to{width: 40%; opacity: 1;}
+}
+
+.load-icon {
+    margin: 20px;
+    border: 6px solid #f3f3f3; /* Light grey */
+    border-top: 6px solid rgb(255, 0, 128); /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .loading {
@@ -69,7 +86,8 @@ body {
 .title {
     color: rgb(255, 0, 128);
     font-size: 80px;
-    font-family: 'Zilla Slab Highlight', cursive;
+    /* font-family: 'Zilla Slab Highlight', cursive; */
+    font-family: 'Tourney', cursive;
     word-wrap: break-word;
     word-break: break-all;
 }
@@ -102,8 +120,14 @@ body {
 }
 
 .text-page-h1 {
+    color: white;
+    font-family: 'Tourney', cursive;
+    font-size: 50px;
+    padding-top: 10px;
+}
+
+.text-page-h1::first-letter {
     color: rgb(255, 0, 128);
-    font-family: monospace;
 }
 
 .text-page-p {
@@ -147,8 +171,10 @@ body {
 .img-page-img {
     /* margin: 10px 50px; */
     width: 100%;
+    height: 300px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    object-fit: cover;
 }
 
 .img-page-vid {
@@ -205,6 +231,8 @@ body {
     color: black;
     font-family: monospace;
     font-weight: bold;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .tab-link:not(.active) {
@@ -242,8 +270,8 @@ body {
 .censored-button {
     border-style: solid;
     border-color: white;
-    border-radius: 5px;
-    padding: 3px 5px 3px 5px;
+    border-radius: 40px;
+    padding: 3px 10px 3px 10px;
     color: rgb(255, 0, 128);
     transition-duration: 0.5s;
 }
@@ -251,6 +279,5 @@ body {
 .censored-button:hover {
     cursor: pointer;
     border-color: rgb(255, 0, 128);
-    border-radius: 10px;
     transition-duration: 0.5s;
 }
